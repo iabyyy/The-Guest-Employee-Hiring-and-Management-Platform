@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search Guest</title></head>
+<body>
+<h2>Guest Employees</h2>
+<ul>
+{% for guest in guests %}
+<li>{{ guest.user.username }} - {{ guest.skills }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>

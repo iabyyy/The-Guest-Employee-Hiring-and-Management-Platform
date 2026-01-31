@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Contractor Dashboard</title></head>
+<body>
+<h2>Contractor Dashboard</h2>
+<a href="/post-job/">Post Job</a> |
+<a href="/search-guest/">Search Guest</a>
+
+<h3>Your Jobs</h3>
+<ul>
+{% for job in jobs %}
+<li>{{ job.title }} - {{ job.required_skills }}</li>
+{% empty %}
+<li>No jobs posted</li>
+{% endfor %}
+</ul>
+</body>
+</html>
