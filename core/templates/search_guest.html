@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head><title>Search Guest</title></head>
+<head>
+    <title>Search Guest</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2f3640;
+            margin-top: 30px;
+        }
+
+        .guest-list {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .guest-list li {
+            background-color: #ffffff;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .guest-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .guest-username {
+            font-weight: bold;
+            color: #273c75;
+        }
+
+        .guest-skills {
+            color: #718093;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
 <body>
-<h2>Guest Employees</h2>
-<ul>
-{% for guest in guests %}
-<li>{{ guest.user.username }} - {{ guest.skills }}</li>
-{% endfor %}
-</ul>
+    <h2>Guest Employees</h2>
+    <ul class="guest-list">
+        {% for guest in guests %}
+        <li>
+            <div class="guest-username">{{ guest.user.username }}</div>
+            <div class="guest-skills">Skills: {{ guest.skills }}</div>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

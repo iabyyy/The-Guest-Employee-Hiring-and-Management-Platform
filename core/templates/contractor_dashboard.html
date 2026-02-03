@@ -1,18 +1,122 @@
 <!DOCTYPE html>
-<html>
-<head><title>Contractor Dashboard</title></head>
-<body>
-<h2>Contractor Dashboard</h2>
-<a href="/post-job/">Post Job</a> |
-<a href="/search-guest/">Search Guest</a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contractor Dashboard</title>
 
-<h3>Your Jobs</h3>
-<ul>
-{% for job in jobs %}
-<li>{{ job.title }} - {{ job.required_skills }}</li>
-{% empty %}
-<li>No jobs posted</li>
-{% endfor %}
-</ul>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background: #007bff;
+            padding: 15px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .actions a {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 18px;
+            margin-right: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .actions a:hover {
+            background: #0056b3;
+        }
+
+        .job-list {
+            margin-top: 30px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .job-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .job-list li:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .no-jobs {
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div>Contractor Dashboard</div>
+    <div>
+        <a href="/post-job/">Post Job</a>
+        <a href="/search-guest/">Search Guest</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Your Jobs</h2>
+
+    <div class="job-list">
+        <ul>
+            {% for job in jobs %}
+                <li>
+                    <span class="job-title">{{ job.title }}</span>
+                    <br>
+                    <small>Required Skills: {{ job.required_skills }}</small>
+                </li>
+            {% empty %}
+                <li class="no-jobs">No jobs posted</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
 </body>
 </html>

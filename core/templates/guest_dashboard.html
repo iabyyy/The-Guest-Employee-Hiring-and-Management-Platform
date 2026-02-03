@@ -1,9 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head><title>Guest Dashboard</title></head>
+<head>
+    <title>Guest Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #2f3640;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #718093;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        a.button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #273c75;
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        a.button:hover {
+            background-color: #40739e;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
 <body>
-<h2>Guest Employee Dashboard</h2>
-<p>Welcome, you can view jobs and give feedback.</p>
-<a href="/feedback/">Give Feedback</a>
+    <div class="container">
+        <h2>Guest Employee Dashboard</h2>
+        <p>Welcome, you can view jobs and give feedback.</p>
+        <a href="/feedback/" class="button">Give Feedback</a>
+    </div>
 </body>
 </html>
